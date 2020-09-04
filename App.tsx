@@ -1,28 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, StyleSheet, ScrollView, StatusBar} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-
-declare const global: {HermesInternal: null | {}};
+import {Form, FormItem} from 'react-native-form-component';
 
 const App = () => {
+  const [email, setEmail] = useState('');
+  const [firstValue, setFirstValue] = useState('');
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+      <SafeAreaView style={{flex: 1}}>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}></ScrollView>
+          contentContainerStyle={styles.scrollView}>
+          <Form>
+            <FormItem
+              label="Label"
+              isRequired
+              value={firstValue}
+              onChangeText={(text) => setFirstValue(text)}
+            />
+            <FormItem
+              label="Email"
+              keyboardType="email-address"
+              value={email}
+              onChangeText={(email) => setEmail(email)}
+            />
+            <FormItem label="phone number" keyboardType="numeric" />
+          </Form>
+        </ScrollView>
       </SafeAreaView>
     </>
   );
@@ -30,7 +36,8 @@ const App = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+    flexGrow: 1,
+    padding: 24,
   },
 });
 
