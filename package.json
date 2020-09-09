@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.63.0",
-    "react-native-form-component": "https://github.com/klazbaba/react-native-form-component.git#add-FormItem"
+    "react-native-form-component": "https://github.com/klazbaba/react-native-form-component.git"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

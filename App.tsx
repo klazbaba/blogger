@@ -3,8 +3,9 @@ import {SafeAreaView, StyleSheet, ScrollView, StatusBar} from 'react-native';
 import {Form, FormItem} from 'react-native-form-component';
 
 const App = () => {
-  const [email, setEmail] = useState('');
   const [firstValue, setFirstValue] = useState('');
+  const [secondValue, setSecondValue] = useState('');
+  const [thirdValue, setThirdValue] = useState('');
 
   return (
     <>
@@ -23,10 +24,15 @@ const App = () => {
             <FormItem
               label="Email"
               keyboardType="email-address"
-              value={email}
-              onChangeText={(email) => setEmail(email)}
+              value={secondValue}
+              onChangeText={(email) => setSecondValue(email)}
             />
-            <FormItem label="phone number" keyboardType="numeric" />
+            <FormItem
+              label="phone number"
+              keyboardType="numeric"
+              value={thirdValue}
+              onChangeText={(text) => setThirdValue(text)}
+            />
           </Form>
         </ScrollView>
       </SafeAreaView>
